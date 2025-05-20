@@ -9,10 +9,21 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+            NavigationStack {
+                    VStack(spacing: 30) {
+                    Text("DRINKUP")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
 
+            NavigationLink("Start") {
+                        DailyIntakeView()
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                    .padding()
+                }
+            }
+        }
 #Preview {
     StartView()
 }
