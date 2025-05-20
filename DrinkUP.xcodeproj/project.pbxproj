@@ -6,17 +6,34 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		742CAC8F2DDCD9CE00A52994 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC8E2DDCD9CE00A52994 /* Goal.swift */; };
+		742CAC912DDCDB7A00A52994 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC902DDCDB7A00A52994 /* GoalViewModel.swift */; };
+		742CAC932DDCDC1500A52994 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC922DDCDC1500A52994 /* StartView.swift */; };
+		742CAC952DDCDC2B00A52994 /* DailyIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC942DDCDC2B00A52994 /* DailyIntakeView.swift */; };
+		742CAC972DDCDC4B00A52994 /* DayLengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC962DDCDC4B00A52994 /* DayLengthView.swift */; };
+		742CAC992DDCDC6500A52994 /* DrinkFrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC982DDCDC6500A52994 /* DrinkFrequencyView.swift */; };
+		742CAC9B2DDCDC8500A52994 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC9A2DDCDC8500A52994 /* ReportView.swift */; };
+		742CACA22DDCDCC100A52994 /* DrinkUPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CACA02DDCDCC100A52994 /* DrinkUPApp.swift */; };
+		742CACA32DDCDCC100A52994 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CAC9F2DDCDCC100A52994 /* StartView.swift */; };
+		742CACA42DDCDCC100A52994 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742CAC9C2DDCDCC100A52994 /* Preview Assets.xcassets */; };
+		742CACA52DDCDCC100A52994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742CAC9E2DDCDCC100A52994 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		742CAC502DDCD90300A52994 /* DrinkUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		742CAC8E2DDCD9CE00A52994 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		742CAC902DDCDB7A00A52994 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		742CAC922DDCDC1500A52994 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		742CAC942DDCDC2B00A52994 /* DailyIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeView.swift; sourceTree = "<group>"; };
+		742CAC962DDCDC4B00A52994 /* DayLengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayLengthView.swift; sourceTree = "<group>"; };
+		742CAC982DDCDC6500A52994 /* DrinkFrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkFrequencyView.swift; sourceTree = "<group>"; };
+		742CAC9A2DDCDC8500A52994 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		742CAC9C2DDCDCC100A52994 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		742CAC9E2DDCDCC100A52994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		742CAC9F2DDCDCC100A52994 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		742CACA02DDCDCC100A52994 /* DrinkUPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkUPApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		742CAC522DDCD90300A52994 /* DrinkUP */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DrinkUP;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		742CAC4D2DDCD90300A52994 /* Frameworks */ = {
@@ -32,7 +49,10 @@
 		742CAC472DDCD90300A52994 = {
 			isa = PBXGroup;
 			children = (
-				742CAC522DDCD90300A52994 /* DrinkUP */,
+				742CAC8D2DDCD98400A52994 /* Models */,
+				742CAC822DDCD93C00A52994 /* Views */,
+				742CAC8C2DDCD97100A52994 /* ViewModels */,
+				742CACA12DDCDCC100A52994 /* DrinkUP */,
 				742CAC512DDCD90300A52994 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +63,53 @@
 				742CAC502DDCD90300A52994 /* DrinkUP.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		742CAC822DDCD93C00A52994 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				742CAC922DDCDC1500A52994 /* StartView.swift */,
+				742CAC942DDCDC2B00A52994 /* DailyIntakeView.swift */,
+				742CAC962DDCDC4B00A52994 /* DayLengthView.swift */,
+				742CAC982DDCDC6500A52994 /* DrinkFrequencyView.swift */,
+				742CAC9A2DDCDC8500A52994 /* ReportView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		742CAC8C2DDCD97100A52994 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				742CAC902DDCDB7A00A52994 /* GoalViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		742CAC8D2DDCD98400A52994 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				742CAC8E2DDCD9CE00A52994 /* Goal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		742CAC9D2DDCDCC100A52994 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				742CAC9C2DDCDCC100A52994 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		742CACA12DDCDCC100A52994 /* DrinkUP */ = {
+			isa = PBXGroup;
+			children = (
+				742CAC9D2DDCDCC100A52994 /* Preview Content */,
+				742CAC9E2DDCDCC100A52994 /* Assets.xcassets */,
+				742CAC9F2DDCDCC100A52994 /* StartView.swift */,
+				742CACA02DDCDCC100A52994 /* DrinkUPApp.swift */,
+			);
+			path = DrinkUP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +126,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				742CAC522DDCD90300A52994 /* DrinkUP */,
 			);
 			name = DrinkUP;
 			packageProductDependencies = (
@@ -109,6 +173,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742CACA42DDCDCC100A52994 /* Preview Assets.xcassets in Resources */,
+				742CACA52DDCDCC100A52994 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +185,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742CAC992DDCDC6500A52994 /* DrinkFrequencyView.swift in Sources */,
+				742CAC952DDCDC2B00A52994 /* DailyIntakeView.swift in Sources */,
+				742CAC932DDCDC1500A52994 /* StartView.swift in Sources */,
+				742CACA22DDCDCC100A52994 /* DrinkUPApp.swift in Sources */,
+				742CACA32DDCDCC100A52994 /* StartView.swift in Sources */,
+				742CAC912DDCDB7A00A52994 /* GoalViewModel.swift in Sources */,
+				742CAC9B2DDCDC8500A52994 /* ReportView.swift in Sources */,
+				742CAC8F2DDCD9CE00A52994 /* Goal.swift in Sources */,
+				742CAC972DDCDC4B00A52994 /* DayLengthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

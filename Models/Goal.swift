@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+struct Goal: Identifiable {
+    
+    var id = UUID()
+    var dailyIntakeLiters: Double
+    var prefferedTimes: Int
+    var dayLengthHours: Int
+    
+    var amountPerDrink: Double {
+        (dailyIntakeLiters * 1000) / Double(preferredTimes)
+    }
+    
+    var intervalHours: Double {
+        Double(dayLengthHours) / Double(preferredTimes)
+    }
+}
+
+    
