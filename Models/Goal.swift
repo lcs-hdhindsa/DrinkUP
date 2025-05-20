@@ -15,11 +15,11 @@ struct Goal: Identifiable {
     var dayLengthHours: Int
     
     var amountPerDrink: Double {
-        (dailyIntakeLiters * 1000) / Double(preferredTimes)
+        (dailyIntakeLiters * 1000) / Double(prefferedTimes)
     }
     
     var intervalHours: Double {
-        Double(dayLengthHours) / Double(preferredTimes)
+        Double(dayLengthHours) / Double(prefferedTimes)
     }
 }
 

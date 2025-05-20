@@ -11,7 +11,7 @@ import SwiftUI
 struct DrinkUPApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }
