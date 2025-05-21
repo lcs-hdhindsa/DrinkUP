@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct DayLengthView: View {
+   
+    @ObservedObject var vm: GoalViewModel
+    @State private var hours: Int = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Text("How long is your normal day?")
+            TextField("Hours (e.g. 8)", value: $hours, formatter: NumberFormatter())
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.numberPad)
+            
+            NavigationLink("Continue") {
+                DayFrequencyView(vm: vm)
+            }
+            .onTapGesture {
+                vm.hours = hours
+            }
+        }
+        .padding()
     }
 }
 
