@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DailyIntakeView: View {
     
-    @State private var intake: Double = 0
+    @State var intake: Double = 0
     @StateObject var vm = GoalViewModel()
 
     var body: some View {

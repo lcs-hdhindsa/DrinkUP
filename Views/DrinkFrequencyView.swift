@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct DrinkFrequencyView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+   
+    @ObservedObject var vm: GoalViewModel
+    @State private var times: Int = 0
 
-#Preview {
-    DrinkFrequencyView()
-}
+    var body: some View {
+        
+        VStack(spacing: 20) {
+                
+            Text("How many times do you want to drink water?")
+                
+            TextField("Times (#)", value: $times, formatter: NumberFormatter())
+                    .textFieldStyle(.roundedBorder)
+                    .keyboardType(.numberPad)
+
+                NavigationLink("See Report") {
+                    ReportView(goal: vm.goal)
+                }
+                .onTapGesture {
+                    vm.times = times
+                }
+            }
+            .padding()
+        }
+    }
+
