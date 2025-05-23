@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct StartView: View {
+    
+    // MARK: Stored properties
+    @State private var showForm = false
+    
+    // MARK: Computed properties
     var body: some View {
-            NavigationStack {
-                    VStack(spacing: 30) {
-                    Text("DRINKUP")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-
-            NavigationLink("Start") {
-                        DailyIntakeView()
-                        }
-                        .buttonStyle(.borderedProminent)
-                    }
-                    .padding()
-                }
+        VStack(spacing: 20) {
+            
+            Button("Start") {
+                showForm = true
             }
+            .buttonStyle(.borderedProminent)
         }
+        .padding()
+        .sheet(isPresented: $showForm) {
+            ReportView(viewModel: GoalViewModel())
+                .presentationDetents([.medium, .large])
+        }
+    }
+}
+
 #Preview {
     StartView()
 }

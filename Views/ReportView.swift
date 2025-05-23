@@ -7,30 +7,58 @@
 
 import SwiftUI
 
-// USED CHATGPT FOR REPORT DATA: https://chatgpt.com/c/682df251-8b3c-8009-b0b9-06ad6c0f0e86
-
-struct ReportView: View {
-     
-    let goal: Goal
-
-        var body: some View {
-            
-            VStack(spacing: 20) {
-                Text("Here is your report")
-                    .font(.title2)
-                    .padding()
-
-            Text("You drink around… \(Int(goal.dailyIntakeLiters * 1000)) ml")
-            
-            Text("Your goal is… \(goal.dailyIntakeLiters, specifier: "%.2f") L")
-            
-            Text("You want to drink… \(goal.prefferedTimes) times a day")
-            
-            Text("So you need to drink… \(Int(goal.amountPerDrink)) ml every \(Int(goal.intervalHours)) hours")
-
-            Spacer()
+struct ReportView:
+                    View {
+    
+    // MARK: Stored properties
+    @ObservedObject var viewModel: GoalViewModel
+    @Environment(\.dismiss) private var dismiss
+    
+    // MARK: Computed properties
+    var body: some View {
+        NavigationView {
+            Form {
+                
+                Section(header: Text("Your Info")) {
+                    TextField("First Name", text: $viewModel.firstName)
+                    TextField("Last Name", text: $viewModel.lastName)
+                }
+                
+                Section(header: Text("Your Habits")) {
+                    TextField("How much water you drink? (ML)", text: $viewModel.currentIntake)
+                        .keyboardType(.decimalPad)
+                    TextField("How long is your day? (hours)", text: $viewModel.dayLength)
+                        .keyboardType(.numberPad)
+                    TextField("How many times you drink in a day", text: $viewModel.drinkFrequency)
+                        .keyboardType(.numberPad)
+                }
+                
+                Section(header: Text("Water Goal")) {
+                    TextField("Water goal (L)", text: $viewModel.goalIntake)
+                        .keyboardType(.decimalPad)
+                }
+                
+                Section {
+                    Button("Submit") {
+                        viewModel.generateReport()
+                        dismiss()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+                
+                if let report = viewModel.report {
+                    Section(header: Text("Your Report")) {
+                        Text(report)
+                            .padding(.top)
+                    }
+                }
             }
-        .padding()
+            .navigationTitle("Your Profile")
         }
     }
+}
 
