@@ -6,45 +6,55 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GoalViewModel: ObservableObject {
-    
-    // MARK: Input fields
-    @Published var firstName = ""
-    @Published var lastName = ""
-    @Published var currentIntake = ""
-    @Published var dayLength = ""
-    @Published var drinkFrequency = ""
-    @Published var goalIntake = ""
-    
-    // MARK: Output
-    @Published var report: String?
-    
-    // MARK: Methods
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
+    @Published var currentIntake: String = ""
+    @Published var dayLength: String = ""
+    @Published var drinkFrequency: String = ""
+    @Published var goalIntake: String = ""
+
+    @Published var goals: [Goal] = []
+    @Published var report: String? = nil
+
     func generateReport() {
-        
-        guard
-            let current = Double(currentIntake),
-            let goal = Double(goalIntake),
-            let times = Double(drinkFrequency),
-            let hours = Double(dayLength)
+        guard let current = Double(currentIntake),
+              let goal    = Double(goalIntake),
+              let times   = Int(drinkFrequency),
+              !firstName.isEmpty
         else {
-            report = "Please enter valid numbers in all fields."
+            report = "Please try agian."
             return
         }
-        
-        let perDrink = Int((goal * 1000) / times)
-        
+       
+        let perDrink = Int((goal * 1_000) / Double(times))
+        let newGoal = Goal(
+            firstName: firstName,
+            lastName: lastName,
+            currentIntake: current,
+            goalIntake: goal,
+            drinkFrequency: times,
+            amountPerDrink: perDrink
+        )
+        goals.append(newGoal)
+       
         report = """
-        \(firstName) \(lastName)
-        
-        Current Intake: \(current)L
-        Goal Intake: \(goal)L
-        Drinks per day: \(Int(times))
-        Day length: \(Int(hours)) hours
-        
-        You need to drink \(perDrink) ml each time.
+        Water Plan for \(firstName):
+        You drink: \(current)L
+        Goal: \(goal)L
+        Drink: \(perDrink)ml x \(times)
         """
     }
+   
+    func clearInputs() {
+        firstName = ""
+        lastName = ""
+        currentIntake = ""
+        dayLength = ""
+        drinkFrequency = ""
+        goalIntake = ""
+        report = nil
+    }
 }
-
