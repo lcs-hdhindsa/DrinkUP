@@ -8,41 +8,57 @@
 import SwiftUI
 
 struct WaterGoalView: View {
-            
-   let myWaterGoal = WaterGoal(dailyGoalLitres: 2.0, hoursAwake: 10)
+    let dailyGoal: Double
+    let hoursAwake: Int
+    
+    private var waterGoal: WaterGoal {
+        WaterGoal(dailyGoalLitres: dailyGoal, hoursAwake: hoursAwake)
+    }
 
     var body: some View {
-        VStack{
-            
-            Text("WaterGoal")
-                .font(.title)
+        VStack(alignment: .center, spacing: 15) {
+            Text("Hourly Breakdown")
+                .font(.title2)
                 .fontWeight(.bold)
             
-            VStack(alignment:.leading,spacing: 20){
-                
-                Text(" Daily Goal: \(myWaterGoal.dailyGoalLitres, specifier: "%.1f") litres")
-                
-                Text(" Hours Awake: \(myWaterGoal.hoursAwake)")
-                
-                Text(" You should drink...")
-                
-                Text(" \(myWaterGoal.waterPerHour, specifier: "%.2f") litres/hour")
+            VStack(alignment: .center, spacing: 12) {
+                Text("Daily Goal: \(waterGoal.dailyGoalLitres, specifier: "%.1f") litres")
                     .font(.headline)
-                Text(" for \(myWaterGoal.hoursAwake) hours")
-                    .font(.headline)
+                
+                Text("Hours Awake: \(waterGoal.hoursAwake)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                Divider()
+                
+                Text("You should drink:")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                Text("\(waterGoal.waterPerHour, specifier: "%.2f") litres/hour")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                
+                Text("for \(waterGoal.hoursAwake) hours")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
-        .multilineTextAlignment(.center)
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 15)
-        .fill(Color.blue.opacity(0.1)))
-        .overlay(RoundedRectangle(cornerRadius: 15)
-        .stroke(Color.blue, lineWidth: 1))
-        .fixedSize(horizontal: true, vertical: false)
         }
+        .multilineTextAlignment(.center)
+        .padding(20)
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.blue.opacity(0.1))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(Color.blue, lineWidth: 1)
+        )
     }
 }
 
 #Preview {
-    WaterGoalView()
+    WaterGoalView(dailyGoal: 8, hoursAwake: 9)
 }
 

@@ -9,28 +9,43 @@ import SwiftUI
 
 struct GoalView: View {
     @ObservedObject var viewModel: GoalViewModel
-    @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        
-        NavigationView {
-            
-            VStack(spacing: 20) {
-                
+        ScrollView {
+            VStack(spacing: 25) {
                 if let report = viewModel.report {
-                    Text(report)
-                        .multilineTextAlignment(.leading)
-                        .padding()
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text(report)
+                            .font(.body)
+                            .multilineTextAlignment(.leading)
+                    }
+                    .padding(20)
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color.blue.opacity(0.1))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.blue, lineWidth: 1)
+                    )
+                }
+                
+                if let goal = viewModel.currentGoal {
+                    WaterGoalView(
+                        dailyGoal: goal.goalIntake,
+                        hoursAwake: Int(viewModel.hoursAwake) ?? 16
+                    )
                 }
                
-                Button("Start Over") {
+                Button("Create New Plan") {
                     viewModel.clearInputs()
-                    dismiss()
                 }
                 .buttonStyle(.borderedProminent)
             }
-            .navigationTitle("Your Plan")
+            .padding()
         }
+        .navigationTitle("Your Water Plan")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
