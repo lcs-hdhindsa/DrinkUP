@@ -24,7 +24,7 @@ struct HomeView: View {
                     profiles.remove(atOffsets: indexSet)
                 }
             }
-            .navigationTitle("My Goals")
+            .navigationTitle("My Profiles")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {

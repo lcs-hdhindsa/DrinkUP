@@ -17,6 +17,7 @@ struct StartView: View {
     
     var body: some View {
         Group {
+            
             if showSummary {
                 GoalView(viewModel: viewModel)
                     .onAppear {
