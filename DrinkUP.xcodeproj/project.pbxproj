@@ -66,9 +66,9 @@
 		742CAC822DDCD93C00A52994 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				74B4CC282DE2B7CB00B2F578 /* HomeView .swift */,
 				742CAC922DDCDC1500A52994 /* StartView.swift */,
 				74B4CC262DE2AD6000B2F578 /* GoalView.swift */,
-				74B4CC282DE2B7CB00B2F578 /* HomeView .swift */,
 				74B4CC2E2DE38F2300B2F578 /* WaterGoalView.swift */,
 			);
 			path = Views;
