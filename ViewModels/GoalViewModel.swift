@@ -5,7 +5,6 @@
 //  Created by Harshan Dhindsa on 2025-05-20.
 //
 
-import Foundation
 import SwiftUI
 
 class GoalViewModel: ObservableObject {
@@ -15,14 +14,17 @@ class GoalViewModel: ObservableObject {
     @Published var dayLength: String = ""
     @Published var drinkFrequency: String = ""
     @Published var goalIntake: String = ""
-
     @Published var goals: [Goal] = []
     @Published var report: String? = nil
+    @Published var hoursAwake: String = "16" // Default waking hours
+
+    @Published var currentGoal: Goal?
 
     func generateReport() {
         guard let current = Double(currentIntake),
               let goal    = Double(goalIntake),
               let times   = Int(drinkFrequency),
+              let hours = Int(hoursAwake),
               !firstName.isEmpty
         else {
             report = "Please try agian."
@@ -38,15 +40,26 @@ class GoalViewModel: ObservableObject {
             drinkFrequency: times,
             amountPerDrink: perDrink
         )
-        goals.append(newGoal)
-       
-        report = """
-        Water Plan for \(firstName):
-        You drink: \(current)L
-        Goal: \(goal)L
-        Drink: \(perDrink)ml x \(times)
-        """
-    }
+         currentGoal = newGoal
+               
+               let waterGoal = WaterGoal(dailyGoalLitres: goal, hoursAwake: hours)
+              
+               report = """
+               Water Plan for \(firstName):
+               
+               Current vs Goal:
+               You currently drink: \(current)L
+               Your goal: \(goal)L
+               
+               Drinking Schedule:
+               Drink \(perDrink)ml
+               \(times) times per day
+               Every \(waterGoal.waterPerHour) litres/hour
+               Over \(hours) waking hours
+               
+               \(current < goal ? "You need \(goal - current)L more to reach your goal!" : "You're meeting your goal!")
+               """
+        }
    
     func clearInputs() {
         firstName = ""
@@ -56,5 +69,17 @@ class GoalViewModel: ObservableObject {
         drinkFrequency = ""
         goalIntake = ""
         report = nil
+    }
+}
+
+class ProfileManager: ObservableObject {
+    @Published var profiles: [GoalViewModel] = []
+    
+    func addProfile(_ profile: GoalViewModel) {
+        profiles.append(profile)
+    }
+    
+    func removeProfile(at indexSet: IndexSet) {
+        profiles.remove(atOffsets: indexSet)
     }
 }

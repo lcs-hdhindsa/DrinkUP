@@ -45,3 +45,4 @@ struct WaterGoalView: View {
 #Preview {
     WaterGoalView()
 }
+

@@ -12,8 +12,9 @@ struct StartView: View {
     @StateObject  var viewModel = GoalViewModel()
     @State  var step = 1
     @State  var showSummary = false
+    @Environment(\.dismiss) var dismiss
    
-    var onFinish: () -> Void = {}  
+    var onFinish: (GoalViewModel) -> Void
     
     var body: some View {
         Group {
@@ -21,7 +22,7 @@ struct StartView: View {
             if showSummary {
                 GoalView(viewModel: viewModel)
                     .onAppear {
-                        onFinish()
+                        onFinish(viewModel)
                     }
                 } else {
                 questionStepper

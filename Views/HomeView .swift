@@ -24,7 +24,7 @@ struct HomeView: View {
                     profiles.remove(atOffsets: indexSet)
                 }
             }
-            .navigationTitle("My Profiles")
+            .navigationTitle("My Goals")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
@@ -35,7 +35,7 @@ struct HomeView: View {
             }
             .sheet(isPresented: $showingStartView) {
                 if let profile = selectedProfile {
-                    StartView(viewModel: profile) {
+                    StartView(viewModel: profile) {_ in 
                         profiles.append(profile)
                         showingStartView = false
                     }
