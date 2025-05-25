@@ -15,6 +15,8 @@
 		742CACA52DDCDCC100A52994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742CAC9E2DDCDCC100A52994 /* Assets.xcassets */; };
 		74B4CC272DE2AD6000B2F578 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4CC262DE2AD6000B2F578 /* GoalView.swift */; };
 		74B4CC292DE2B7CB00B2F578 /* HomeView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4CC282DE2B7CB00B2F578 /* HomeView .swift */; };
+		74B4CC2D2DE38F0600B2F578 /* WaterGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4CC2C2DE38F0600B2F578 /* WaterGoal.swift */; };
+		74B4CC2F2DE38F2300B2F578 /* WaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4CC2E2DE38F2300B2F578 /* WaterGoalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		742CACA02DDCDCC100A52994 /* DrinkUPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkUPApp.swift; sourceTree = "<group>"; };
 		74B4CC262DE2AD6000B2F578 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		74B4CC282DE2B7CB00B2F578 /* HomeView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView .swift"; sourceTree = "<group>"; };
+		74B4CC2C2DE38F0600B2F578 /* WaterGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoal.swift; sourceTree = "<group>"; };
+		74B4CC2E2DE38F2300B2F578 /* WaterGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				742CAC922DDCDC1500A52994 /* StartView.swift */,
 				74B4CC262DE2AD6000B2F578 /* GoalView.swift */,
 				74B4CC282DE2B7CB00B2F578 /* HomeView .swift */,
+				74B4CC2E2DE38F2300B2F578 /* WaterGoalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -81,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				742CAC8E2DDCD9CE00A52994 /* Goal.swift */,
+				74B4CC2C2DE38F0600B2F578 /* WaterGoal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,10 +184,12 @@
 			files = (
 				742CAC932DDCDC1500A52994 /* StartView.swift in Sources */,
 				742CACA22DDCDCC100A52994 /* DrinkUPApp.swift in Sources */,
+				74B4CC2D2DE38F0600B2F578 /* WaterGoal.swift in Sources */,
 				74B4CC292DE2B7CB00B2F578 /* HomeView .swift in Sources */,
 				742CAC912DDCDB7A00A52994 /* GoalViewModel.swift in Sources */,
 				74B4CC272DE2AD6000B2F578 /* GoalView.swift in Sources */,
 				742CAC8F2DDCD9CE00A52994 /* Goal.swift in Sources */,
+				74B4CC2F2DE38F2300B2F578 /* WaterGoalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
