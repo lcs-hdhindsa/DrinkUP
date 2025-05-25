@@ -14,6 +14,7 @@
 		742CACA42DDCDCC100A52994 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742CAC9C2DDCDCC100A52994 /* Preview Assets.xcassets */; };
 		742CACA52DDCDCC100A52994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742CAC9E2DDCDCC100A52994 /* Assets.xcassets */; };
 		74B4CC272DE2AD6000B2F578 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4CC262DE2AD6000B2F578 /* GoalView.swift */; };
+		74B4CC292DE2B7CB00B2F578 /* HomeView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4CC282DE2B7CB00B2F578 /* HomeView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		742CAC9E2DDCDCC100A52994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		742CACA02DDCDCC100A52994 /* DrinkUPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkUPApp.swift; sourceTree = "<group>"; };
 		74B4CC262DE2AD6000B2F578 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		74B4CC282DE2B7CB00B2F578 /* HomeView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				742CAC922DDCDC1500A52994 /* StartView.swift */,
 				74B4CC262DE2AD6000B2F578 /* GoalView.swift */,
+				74B4CC282DE2B7CB00B2F578 /* HomeView .swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				742CAC932DDCDC1500A52994 /* StartView.swift in Sources */,
 				742CACA22DDCDCC100A52994 /* DrinkUPApp.swift in Sources */,
+				74B4CC292DE2B7CB00B2F578 /* HomeView .swift in Sources */,
 				742CAC912DDCDB7A00A52994 /* GoalViewModel.swift in Sources */,
 				74B4CC272DE2AD6000B2F578 /* GoalView.swift in Sources */,
 				742CAC8F2DDCD9CE00A52994 /* Goal.swift in Sources */,
@@ -319,6 +323,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +353,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

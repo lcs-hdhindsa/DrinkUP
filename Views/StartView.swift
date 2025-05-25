@@ -8,27 +8,33 @@
 import SwiftUI
 
 struct StartView: View {
-    @StateObject private var viewModel = GoalViewModel()
-    @State private var step = 1
-    @State private var showSummary = false
+    
+    @StateObject  var viewModel = GoalViewModel()
+    @State  var step = 1
+    @State  var showSummary = false
    
+    var onFinish: () -> Void = {}  
+    
     var body: some View {
         Group {
             if showSummary {
                 GoalView(viewModel: viewModel)
-            } else {
+                    .onAppear {
+                        onFinish()
+                    }
+                } else {
                 questionStepper
             }
         }
         .animation(.default, value: showSummary)
     }
    
-    private var questionStepper: some View {
+      var questionStepper: some View {
         VStack(spacing: 20) {
             Text(currentQuestionTitle)
                 .font(.headline)
                 .padding(.top)
-           
+                
             TextField(currentPlaceholder, text: currentBinding)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(currentKeyboardType)
