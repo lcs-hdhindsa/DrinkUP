@@ -16,8 +16,7 @@ class GoalViewModel: ObservableObject {
     @Published var goalIntake: String = ""
     @Published var goals: [Goal] = []
     @Published var report: String? = nil
-    @Published var hoursAwake: String = "16" // Default waking hours
-
+    @Published var hoursAwake: String = "16" // Default day awake
     @Published var currentGoal: Goal?
 
     func generateReport() {
@@ -42,7 +41,7 @@ class GoalViewModel: ObservableObject {
         )
          currentGoal = newGoal
                
-               let waterGoal = WaterGoal(dailyGoalLitres: goal, hoursAwake: hours)
+        let waterGoal = WaterGoal(dailyGoalLitres: goal, hoursAwake: hours)
               
                report = """
                Water Plan for \(firstName):

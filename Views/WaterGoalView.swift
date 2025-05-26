@@ -11,7 +11,7 @@ struct WaterGoalView: View {
     let dailyGoal: Double
     let hoursAwake: Int
     
-    private var waterGoal: WaterGoal {
+    var waterGoal: WaterGoal {
         WaterGoal(dailyGoalLitres: dailyGoal, hoursAwake: hoursAwake)
     }
 

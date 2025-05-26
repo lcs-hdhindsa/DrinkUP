@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var profileManager = ProfileManager()
     @State var showingStartView = false
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -45,7 +44,7 @@ struct HomeView: View {
                                     Text(profileManager.profiles[index].firstName.isEmpty ? "Unnamed Profile" : "\(profileManager.profiles[index].firstName) \(profileManager.profiles[index].lastName)")
                                         .font(.headline)
                                     
-                                    if let goal = profileManager.profiles[index].currentGoal {
+                          if let goal = profileManager.profiles[index].currentGoal {
                                         Text("Goal: \(goal.goalIntake, specifier: "%.1f")L daily")
                                             .font(.subheadline)
                                             .foregroundColor(.secondary)

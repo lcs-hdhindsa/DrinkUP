@@ -11,7 +11,7 @@ struct StartView: View {
     @ObservedObject var viewModel: GoalViewModel
     @State var step = 1
     @State var showSummary = false
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) var dismiss
    
     var onFinish: (GoalViewModel) -> Void 
     
@@ -110,10 +110,10 @@ struct StartView: View {
         switch step {
         case 1: return "First name"
         case 2: return "Last name"
-        case 3: return "e.g. 1.2 (litres)"
-        case 4: return "e.g. 8 (times)"
-        case 5: return "e.g. 2.5 (litres)"
-        case 6: return "e.g. 16 (hours)"
+        case 3: return "(litres)"
+        case 4: return "(times)"
+        case 5: return "(litres)"
+        case 6: return "(hours)"
         default: return ""
         }
     }
