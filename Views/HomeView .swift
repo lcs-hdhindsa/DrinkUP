@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var profileManager = ProfileManager()
     @State var showingStartView = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -21,17 +21,17 @@ struct HomeView: View {
                             .font(.system(size: 50))
                             .foregroundColor(.blue)
                         
-                       
-                    Text("No Water Goals Yet")
+                        
+                        Text("No Water Goals Yet")
                             .font(.title2)
                             .fontWeight(.semibold)
                         
-                    Text("Create your first water drinking goal to get started")
+                        Text("Create your first water drinking goal to get started")
                             .font(.body)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.center)
                         
-                    Button("Create Your First Goal") {
+                        Button("Create Your First Goal") {
                             showingStartView = true
                         }
                         .buttonStyle(.borderedProminent)
@@ -76,7 +76,6 @@ struct HomeView: View {
         }
     }
 }
-
 #Preview {
     HomeView()
 }

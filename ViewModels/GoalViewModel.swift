@@ -72,14 +72,4 @@ class GoalViewModel: ObservableObject {
     }
 }
 
-class ProfileManager: ObservableObject {
-    @Published var profiles: [GoalViewModel] = []
-    
-    func addProfile(_ profile: GoalViewModel) {
-        profiles.append(profile)
-    }
-    
-    func removeProfile(at indexSet: IndexSet) {
-        profiles.remove(atOffsets: indexSet)
-    }
-}
+
