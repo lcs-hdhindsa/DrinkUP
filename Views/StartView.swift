@@ -113,7 +113,7 @@ struct StartView: View {
         case 3: return "(litres)"
         case 4: return "(times)"
         case 5: return "(litres)"
-        case 6: return "(hours)"
+        case 6: return "(Avg. awake time for adult is 16 hours)"
         default: return ""
         }
     }

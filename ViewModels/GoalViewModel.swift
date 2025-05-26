@@ -16,7 +16,7 @@ class GoalViewModel: ObservableObject {
     @Published var goalIntake: String = ""
     @Published var goals: [Goal] = []
     @Published var report: String? = nil
-    @Published var hoursAwake: String = "16" // Default day awake
+    @Published var hoursAwake: String = "" 
     @Published var currentGoal: Goal?
 
     func generateReport() {
